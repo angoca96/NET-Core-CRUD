@@ -1,0 +1,48 @@
+﻿@model CRUD_Sysne_NETCoreWebApp.Models.Autos
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+
+<div>
+    <h4>Autos</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MatriculaAuto)
+        </dt>
+        <dd class = "col-sm-10">
+            <input value="
+            @Html.DisplayFor(model => model.MatriculaAuto)" disabled="disabled"/>
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoAuto)
+        </dt>
+        <dd class = "col-sm-10">
+            <input value="
+            @Html.DisplayFor(model => model.TipoAuto)" disabled="disabled"/>
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NombreConductor)
+        </dt>
+        <dd class="col-sm-10">
+            <input value="
+            @Html.DisplayFor(model => model.NombreConductor)" disabled="disabled"/>
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdAuto"><button>Editar</button></a> |
+    <a asp-action="Index"><button>Regresar</button></a>
+</div>
+</body>
+</html>

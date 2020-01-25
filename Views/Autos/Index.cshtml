@@ -1,0 +1,59 @@
+﻿@model IEnumerable<CRUD_Sysne_NETCoreWebApp.Models.Autos>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create"><button>Agregar Nuevo</button></a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MatriculaAuto)
+            </th>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoAuto)
+            </th>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreConductor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MatriculaAuto)
+            </td>
+            <td></td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoAuto)
+            </td>
+            <th></th>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreConductor)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdAuto"><button>Editar</button></a> |
+                <a asp-action="Details" asp-route-id="@item.IdAuto"><button>Detalles</button></a> |
+                <a asp-action="Delete" asp-route-id="@item.IdAuto"><button>Eliminar</button></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>
